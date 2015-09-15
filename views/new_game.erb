@@ -4,6 +4,7 @@
   <br><a href="/new_game">Try Again</a>
   <% elsif @name %>
   Hello, <%= @name %> welcome to your game of Battleship
+  <br><a href='/board'>board</a>
   <% else %>
   <form action="/new_game">
     What's your name?

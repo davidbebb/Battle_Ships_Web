@@ -1,5 +1,8 @@
 require 'sinatra/base' #controller
 
+require './lib/board'
+require './lib/cell'
+
 class BattleshipsWeb < Sinatra::Base
   set :views, proc { File.join(root, 'views') }
 
@@ -10,6 +13,11 @@ class BattleshipsWeb < Sinatra::Base
   get '/new_game' do
     @name = params[:name]
     erb :new_game
+  end
+
+  get '/board' do
+    @board = Board.new(Cell).grid
+    erb :board
   end
 
   # post '/board' do
