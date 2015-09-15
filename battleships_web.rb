@@ -1,5 +1,4 @@
 require 'sinatra/base' #controller
-
 require './lib/board'
 require './lib/cell'
 
@@ -15,11 +14,6 @@ class BattleshipsWeb < Sinatra::Base
     @board = Board.new(Cell).grid
     erb :new_game
   end
-
-  # get '/board' do
-  #   @board = Board.new(Cell).grid
-  #   erb :board
-  # end
 
   # post '/board' do
   #   session[:name] = params[:name]
