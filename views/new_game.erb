@@ -1,0 +1,14 @@
+<div style="border: 3px dashed green">
+  <% if @name == "" %>
+  Please enter your name
+  <br><a href="/new_game">Try Again</a>
+  <% elsif @name %>
+  Hello, <%= @name %> welcome to your game of Battleship
+  <% else %>
+  <form action="/new_game">
+    What's your name?
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+  <% end %>
+</div>
