@@ -12,13 +12,14 @@ class BattleshipsWeb < Sinatra::Base
 
   get '/new_game' do
     @name = params[:name]
+    @board = Board.new(Cell).grid
     erb :new_game
   end
 
-  get '/board' do
-    @board = Board.new(Cell).grid
-    erb :board
-  end
+  # get '/board' do
+  #   @board = Board.new(Cell).grid
+  #   erb :board
+  # end
 
   # post '/board' do
   #   session[:name] = params[:name]
