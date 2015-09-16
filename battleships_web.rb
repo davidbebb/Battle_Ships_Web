@@ -12,7 +12,8 @@ class BattleshipsWeb < Sinatra::Base
   get '/new_game' do
     @name = params[:name]
     @board = Board.new(Cell).grid #we need .new here - WHY? And if we remove it, it only affects a new session....
-    erb :new_game
+    # erb :new_game
+    erb :print_board
   end
 
   # post '/board' do

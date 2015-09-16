@@ -1,0 +1,13 @@
+<div>
+<% array=[] %>
+ <% @board.each_slice(10){|slice_of_hash| array << slice_of_hash} %>
+<table style="width: 100%">
+<% array.each do |a| %> 
+<tr> <% 
+	a.each do |b| %>
+	<td> <%= b %> </td> 
+	<% end %>	
+</tr>	
+<% end %>
+</table>
+</div>
