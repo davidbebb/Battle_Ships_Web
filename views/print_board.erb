@@ -1,19 +1,18 @@
 
 <style>
-table, th, td {
-    border: 1px solid black;
-}
+table, th, td { border: 1px solid black;}
+.false { text-align: center; color: blue; background-color: blue;}
 </style>
 <div>
 <% array=[] %>
  <% @board.each_slice(10){|slice_of_hash| array << slice_of_hash} %>
 <table style="width: 100%">
-<% array.each do |a| %> 
-<tr> 
+<% array.each do |a| %>
+<tr>
 <% a.each do |b| %>
-	<td> <%= b[1].hit? %> </td> 
-	<% end %>	
-</tr>	
+	<td id=<%=b[0]%> class=<%=b[1].hit?%>> ~ </td>
+	<% end %>
+</tr>
 <% end %>
 </table>
 </div>
