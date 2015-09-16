@@ -10,8 +10,8 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/new_game' do
-    @name 
-    @board = Board (Cell).grid
+    @name = params[:name]
+    @board = Board.new(Cell).grid #we need .new here - WHY? And if we remove it, it only affects a new session....
     erb :new_game
   end
 
