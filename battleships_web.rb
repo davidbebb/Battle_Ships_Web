@@ -10,8 +10,8 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/new_game' do
-    @name = params[:name]
-    @board = Board.new(Cell).grid
+    @name 
+    @board = Board (Cell).grid
     erb :new_game
   end
 
