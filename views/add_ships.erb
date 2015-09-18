@@ -1,3 +1,10 @@
 <div style="border: 3px dashed green">
-  <%@fleet.each{|ship| %> Place a <%=ship.size%> unit ship.<%}%>
+  <%ship = @ship%>
+Place a <%=@ship.size%> unit ship.
+<form action="/add_ships" method="post">
+  <input type="text" name="coords"> <br>
+  <input type="radio" name="orientation" value="horizontally">Horizontal
+  <input type="radio" name="orientation" value="vertically">Vertical<br>
+  <input type="submit">
+</form>
 </div>
